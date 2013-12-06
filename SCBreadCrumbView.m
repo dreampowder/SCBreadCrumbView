@@ -9,6 +9,7 @@
 #import "SCBreadCrumbView.h"
 
 @implementation SCBreadCrumbView
+@synthesize containerView;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -35,13 +36,24 @@
         self.lineColor = [UIColor orangeColor];
     }
     
+
+    
+    if(!self.containerView){
+        containerView = [[UIScrollView alloc] initWithFrame:[self bounds]];
+        [containerView setContentInset:UIEdgeInsetsMake(0, 0, self.linePosition.y, 0)];
+        [self addSubview:containerView];
+    }
+    containerView.contentSize = CGSizeMake(self.bounds.size.width, [self getTotalHeight]);
+    
     CGRect breadCrumbFrame;
     breadCrumbFrame.origin = self.linePosition;
-    breadCrumbFrame.size = CGSizeMake(self.lineWeight, self.bounds.size.height);
+    breadCrumbFrame.size = CGSizeMake(self.lineWeight, [self getTotalHeight]);
     UIView* breadCrumbLine = [[UIView alloc] initWithFrame:breadCrumbFrame];
     breadCrumbLine.backgroundColor = self.lineColor;
     breadCrumbLine.layer.cornerRadius = self.lineWeight/2.0f;;
-    [self addSubview:breadCrumbLine];
+    [self.containerView addSubview:breadCrumbLine];
+    
+    
     
     for(int i =0;i<steps;i++){
         
@@ -62,7 +74,7 @@
         indicator.text = [NSString stringWithFormat:@"%i",i];
         indicator.textAlignment = NSTextAlignmentCenter;
         indicator.font = [UIFont systemFontOfSize:12.0f];
-        [self insertSubview:pointView aboveSubview:breadCrumbLine];
+        [self.containerView insertSubview:pointView aboveSubview:breadCrumbLine];
         [pointView addSubview:indicator];
         //Yuvarlak elemanlar ve içlerindeki rakamlar ekleniyor - Bitti
         
@@ -76,8 +88,16 @@
         label.font = [UIFont systemFontOfSize:14.0f];
         label.numberOfLines = 0;
         [label setMinimumScaleFactor:0.1f];
-        [self addSubview:label];
+        [containerView addSubview:label];
     }
+}
+
+-(float)getTotalHeight{
+    float totalHeight = 0.0f;
+    for(int i = 0;i<[self numberOfStepsInBreadCrumbView];i++){
+        totalHeight+= [self spaceBetweenStepsAtIndex:i];
+    }
+    return totalHeight;
 }
 
 #pragma SCBreadCrumb Datasource

@@ -40,7 +40,7 @@
     return 13;
 }
 -(NSAttributedString*)titleForStepAtIndex:(NSUInteger)index{
-    return [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"Uzun Açıklamalalı ve Fazlasıyla Karmaşık Soru %i",index]];
+    return [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"Uzun Açıklamalalı ve Fazlasıyla Karmaşık Soru %i",index+1]];
 }
 -(float)spaceBetweenStepsAtIndex:(NSUInteger)index{
         return 100.0f;
