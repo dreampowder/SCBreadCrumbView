@@ -7,6 +7,7 @@
 //
 
 #import "SCAppDelegate.h"
+#import "SCMainViewController.h"
 
 @implementation SCAppDelegate
 
@@ -14,6 +15,8 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    SCMainViewController* mainView = [[SCMainViewController alloc] init];
+    [self.window setRootViewController:mainView];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

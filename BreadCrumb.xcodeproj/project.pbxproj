@@ -19,6 +19,8 @@
 		00AFDB681851FFF000D4D96D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AFDB501851FFF000D4D96D /* UIKit.framework */; };
 		00AFDB701851FFF000D4D96D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00AFDB6E1851FFF000D4D96D /* InfoPlist.strings */; };
 		00AFDB721851FFF000D4D96D /* BreadCrumbTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AFDB711851FFF000D4D96D /* BreadCrumbTests.m */; };
+		00AFDB7D1852001100D4D96D /* SCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AFDB7C1852001100D4D96D /* SCMainViewController.m */; };
+		00AFDB811852003000D4D96D /* SCBreadCrumbView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AFDB801852003000D4D96D /* SCBreadCrumbView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,10 @@
 		00AFDB6D1851FFF000D4D96D /* BreadCrumbTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BreadCrumbTests-Info.plist"; sourceTree = "<group>"; };
 		00AFDB6F1851FFF000D4D96D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		00AFDB711851FFF000D4D96D /* BreadCrumbTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BreadCrumbTests.m; sourceTree = "<group>"; };
+		00AFDB7B1852001100D4D96D /* SCMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCMainViewController.h; path = BreadCrumb/SCMainViewController.h; sourceTree = "<group>"; };
+		00AFDB7C1852001100D4D96D /* SCMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCMainViewController.m; path = BreadCrumb/SCMainViewController.m; sourceTree = "<group>"; };
+		00AFDB7F1852003000D4D96D /* SCBreadCrumbView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCBreadCrumbView.h; sourceTree = "<group>"; };
+		00AFDB801852003000D4D96D /* SCBreadCrumbView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCBreadCrumbView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,8 @@
 		00AFDB401851FFF000D4D96D = {
 			isa = PBXGroup;
 			children = (
+				00AFDB821852003500D4D96D /* BreadCrumbView */,
+				00AFDB7E1852001600D4D96D /* MainView */,
 				00AFDB521851FFF000D4D96D /* BreadCrumb */,
 				00AFDB6B1851FFF000D4D96D /* BreadCrumbTests */,
 				00AFDB4B1851FFF000D4D96D /* Frameworks */,
@@ -142,6 +150,24 @@
 				00AFDB6E1851FFF000D4D96D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00AFDB7E1852001600D4D96D /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				00AFDB7B1852001100D4D96D /* SCMainViewController.h */,
+				00AFDB7C1852001100D4D96D /* SCMainViewController.m */,
+			);
+			name = MainView;
+			sourceTree = "<group>";
+		};
+		00AFDB821852003500D4D96D /* BreadCrumbView */ = {
+			isa = PBXGroup;
+			children = (
+				00AFDB7F1852003000D4D96D /* SCBreadCrumbView.h */,
+				00AFDB801852003000D4D96D /* SCBreadCrumbView.m */,
+			);
+			name = BreadCrumbView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,7 +267,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				00AFDB5D1851FFF000D4D96D /* SCAppDelegate.m in Sources */,
+				00AFDB811852003000D4D96D /* SCBreadCrumbView.m in Sources */,
 				00AFDB591851FFF000D4D96D /* main.m in Sources */,
+				00AFDB7D1852001100D4D96D /* SCMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
