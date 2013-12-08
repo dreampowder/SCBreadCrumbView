@@ -32,12 +32,20 @@
     breadCrumbView.dataSource = self;
     [self.view addSubview:breadCrumbView];
     [breadCrumbView reloadData];
+    
+    UIBarButtonItem* addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(addQuestion:)];
+    [self.navigationItem setRightBarButtonItem:addButton];
 	// Do any additional setup after loading the view.
+}
+
+-(void)addQuestion:(id)sender{
+    self.numOfLines++;
+    [breadCrumbView reloadData];
 }
 
 #pragma SCBreadCrumbView Data Source 
 -(NSUInteger)numberOfStepsInBreadCrumbView{
-    return 13;
+    return self.numOfLines;
 }
 -(NSAttributedString*)titleForStepAtIndex:(NSUInteger)index{
     return [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"Uzun Açıklamalalı ve Fazlasıyla Karmaşık Soru %i",index+1]];

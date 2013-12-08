@@ -12,5 +12,5 @@
 @interface SCMainViewController : UIViewController<SCBreadCrumbViewDataSource,SCBreadCrumbViewDelegate>
 
 @property (nonatomic, strong)SCBreadCrumbView* breadCrumbView;
-
+@property int numOfLines;
 @end
